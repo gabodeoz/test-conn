@@ -11,6 +11,27 @@ and open the template in the editor.
         <title></title>        
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+function realizaProceso(valorCaja1, valorCaja2){
+        var parametros = {
+                "valorCaja1" : valorCaja1,
+                "valorCaja2" : valorCaja2
+        };
+        $.ajax({
+                data:  parametros,
+                url:   'pagina1.php',
+                type:  'post',
+                beforeSend: function () {
+                        $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                        $("#resultado").html(response);
+                }
+        });
+}
+</script>
+    
     </head>
     <body>
         <div class="content">

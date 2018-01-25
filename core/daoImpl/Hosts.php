@@ -47,6 +47,11 @@ class Hosts extends ConectionBD {
                         . ', db_port FROM hosts WHERE 1 AND nid_host ='.$nid_host;
     
         $this->get_results_from_query();
+         if (count($this->rows) == 1) {
+            foreach ($this->rows[0] as $propiedad => $valor) {
+                $this->$propiedad = $valor;          
+            }           
+        }    
     }
     
     public function delete ($nid_host =''){
