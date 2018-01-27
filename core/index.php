@@ -5,16 +5,16 @@
         require '../constants/constants_views.php';
     
         $uri = $_SERVER['REQUEST_URI'];
-        $view = str_replace(ROOT,'', $uri);      
-        $view = str_replace('/','', $view);
-        
-        handler($view);
+        $metod = str_replace(URL_WS,'', $uri);      
+        $metod = str_replace('/','', $metod);
+        echo $metod;
+        handler($metod);
        
 function handler($metod = '') {
     $host = new Hosts();
     switch ($metod) {
         case SET_HOST:
-            if($_POST)
+          
                 $host->insert($_POST);                                            
             break;
         case UPDATE_HOST:                 
@@ -39,11 +39,5 @@ function handler($metod = '') {
     unset($host);
 }
 
-/*
- *  const SET_HOST = 'set_host';    
-    const UPDATE_HOST = 'update_host';
-    const DELETE_HOST = 'delete_host';
-    const GET_HOST = 'get_host';
- * /
- */
+
 ?>

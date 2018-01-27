@@ -6,11 +6,11 @@
  */
 abstract class ConectionBD{
     //put your code here
-    private static $db_host = 'localhost';
+    private static $server = 'localhost';
     //sagil23'@'localhost
-    private static $db_user = 'user_monitor';
-    private static $db_pass = 'wszLmTJZdWjvd4wF';
-    protected $db_name = 'monitordb';
+    private static $sesion = 'user_monitor';
+    private static $pass = 'wszLmTJZdWjvd4wF';
+    private static $database = 'monitordb';
     protected $query;
     public $rows = array();
     private $conn;
@@ -19,8 +19,8 @@ abstract class ConectionBD{
     # los siguientes métodos pueden definirse con exactitud y no son abstractos
 	# Conectar a la base de datos
 	private function open_connection() {
-	    $this->conn = new mysqli(self::$db_host, self::$db_user, 
-	                             self::$db_pass, $this->db_name);
+	    $this->conn = new mysqli(self::$server, self::$sesion, 
+	                             self::$pass, self::$database);
 	}
 
 	# Desconectar la base de datos
@@ -29,14 +29,10 @@ abstract class ConectionBD{
 	}
 
 	# Ejecutar un query simple del tipo INSERT, DELETE, UPDATE
-	protected function execute_single_query() {
-	    if(true) {
+	protected function execute_single_query() {	    
 	        $this->open_connection();
-	        $this->conn->query($this->query);
-	        $this->close_connection();
-	    } else {
-	        $this->mensaje = 'Metodo no permitido';
-	    }
+	        echo $this->conn->query($this->query);
+	        $this->close_connection();	    
 	}
 
 	# Traer resultados de una consulta en un Array
