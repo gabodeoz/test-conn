@@ -16,25 +16,13 @@ class Connections  {
     private $conn;
     public $result = 0;
     public $message;
-    
-    public function __construct(  $db_host, $db_port, $db_user, $db_pass, $options){
-            $this->dns = "sqlsrv:Server=".$db_host." ;Database= ".$db_name;               
-            $this->db_host =$db_host;    
-            $this->db_user = $db_user;
-            $this->db_pass  = $db_pass;
-            $this->db_name = $db_name;
-            $this->options = $options;
-    }
-    
-    function test_connection(){
-        try {
-           $this->conn = new PDO($this->dsn, $this->user, $this->password);
-           $this->result =0;
-        } catch (PDOException $e) {
-            $this->message= $e->getMessage;
-            $this->result =0;
-        }
-    }
+    //Database URL	jdbc:sqlserver://10.225.175.49:1433;databaseName=Administracion_Staff
+   /*
+    * $dbHandle = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+$dbHandle->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// always disable emulated prepared statement when using the MySQL driver
+$dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    */
     
     protected function get_results_from_query() {
         $this->open_connection();
