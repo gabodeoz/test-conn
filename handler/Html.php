@@ -1,4 +1,5 @@
 <?php
+
 class Html {
 
     function render_dinamic($html = '', $array_de_resultados, $regex = '', $comodines = array()) {
@@ -27,24 +28,40 @@ class Html {
         return $html;
     }
 
-    function html_data($view = '', $data = array()) {
-        $html = get_template(VIEW_TEMPLATE);
-        $html = str_replace('#{'. $view .'}', get_template($view), $html);
-        print $html;
+    function html_data($html = '', $data = array()) {        
+        foreach ($data  as $clave => $valor) {
+            $html = str_replace('#{' . $clave . '}', $valor, $html);
+        }
+        return $html;
     }
     
     function get_template($html = '') {
-         $file = URL_HTML . $html . '.html';
-         $template = file_get_contents($file);
-         return $template;
+        $file_path = '../'.URL_HTML . $html . '.html';
+        if (is_readable($file_path)){         
+            $template = file_get_contents($file_path);
+            return $template;
+        }
+        return '';
     }
     
-    function html($html_file = '') {        
+    function getHtml($html_file = '',$data = array()) {        
         $html = $this->get_template(VIEW_TEMPLATE); 
-        //$html = str_replace('#{header}',  $this->get_template(VIEW_HEADER), $html);
-        //$html = str_replace('#{main}',  $this->get_template($html_file), $html);
+        $html = str_replace('#{header}',  $this->get_template(VIEW_HEADER), $html);
+        switch ($html_file){
+            case VIEW_MAIN:
+             $data ['title'] = 'Guardar server';   
+             $html = str_replace('#{main}',  $this->get_template(VIEW_MAIN), $html);   
+             $html = $this ->html_data($html,$data);
+            break;    
+        }
+        unset($data);
         print $html;
     }
+    
+    function __destruct() {
+        unset($this);
+    }
+
 
 }
 

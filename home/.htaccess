@@ -6,6 +6,6 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -l
 RewriteRule ^ - [L]
-#RewriteRule ^test-conn/ test-conn/index.php
+RewriteRule ^test-conn/ test-conn/index.php
 #ErrorDocument 404 http://localhost/
 #ErrorDocument 500 http://localhost/

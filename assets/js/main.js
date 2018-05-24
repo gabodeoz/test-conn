@@ -19,18 +19,31 @@ $(document).ready(function () {
     }
     
     $( "form" ).submit(function( event ) {
-  $.ajax({
+        $.ajax({
             data: $("form").serialize(),
-            url: $("form").attr('action'),
+            url: '../core/index.php',
             type: 'post',
+            timeout: (2 * 1000),
             beforeSend: function () {
                 $("#loader").show();
             },
             success: function (response) {
-                $.notify(response,"success");
+                //$.notify(response,"success");
                 $("#loader").hide();
-            }           
+            }
+        }).done(function () {
+
+            alert('Success!!');
+
+        }).fail(function () {
+
+            alert('Error!!');
+
+        }).always(function () {
+
+            alert('Always');
+
         });
-            event.preventDefault();
-        });
+        event.preventDefault();
+    });
 });

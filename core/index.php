@@ -11,10 +11,10 @@
         handler($metod);
        
 function handler($metod = '') {
+    if($_POST){echo 'hello- world '.$metod;}
     $host = new Hosts();
     switch ($metod) {
-        case SET_HOST:
-          
+        case SET_HOST:          
                 $host->insert($_POST);                                            
             break;
         case UPDATE_HOST:                 
