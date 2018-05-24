@@ -1,49 +1,16 @@
-$(document).ready(function () {
-    $.notify("Bienvenido","info");
-    $("#loader").hide();
-    //$( "#target" ).submit(function( event ) {
-    function sendData() {
-        $.ajax({
-            data: $("form").serialize(),
-            url: $("form").attr('action'),
-            type: 'post',
-            beforeSend: function () {
-                $("#loader").show();
-            },
-            success: function (response) {
-                $.notify(response,"success");
-                $("#loader").hide();
-            }           
+ $(document).ready(function () {
+			
+         $('#ajaxBtn').click(function(){
+                alert('hello-world');
+             /*   $.ajax('/jquery/submitData', {
+                        type: 'POST',  // http method
+                        data: { myData: 'This is my data.' },  // data to submit
+                        success: function (data, status, xhr) {
+                                $('p').append('status: ' + status + ', data: ' + data);
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                        $('p').append('Error: ' + errorMessage);
+                                }
+                }); */
         });
-        return false;
-    }
-    
-    $( "form" ).submit(function( event ) {
-        $.ajax({
-            data: $("form").serialize(),
-            url: '../core/index.php',
-            type: 'post',
-            timeout: (2 * 1000),
-            beforeSend: function () {
-                $("#loader").show();
-            },
-            success: function (response) {
-                //$.notify(response,"success");
-                $("#loader").hide();
-            }
-        }).done(function () {
-
-            alert('Success!!');
-
-        }).fail(function () {
-
-            alert('Error!!');
-
-        }).always(function () {
-
-            alert('Always');
-
-        });
-        event.preventDefault();
     });
-});
