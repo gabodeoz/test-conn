@@ -5,7 +5,8 @@
                 <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>                           
                 #{title}
             </h4>
-            <form action="../core/set-host/">
+            
+            <form action="/test-conn/core/set-host/" method="POST">
                 <div class="form-group">
                     <label for="db_host">Server</label>
                     <input id="db_host" type="text" class="form-control"  placeholder="Server IP">
@@ -21,7 +22,7 @@
                     <input id="db_pass" type="password" class="form-control"  placeholder="Password">
                 </div>                            
                 <div class="text-right">
-                    <button type="submit" class="btn btn-default" id="ajaxBtn">
+                    <button type="submit" class="btn btn-default" >
                         <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
                         Guardar
                     </button>
@@ -39,5 +40,6 @@
                 Conexiones
             </h4>                          
         </div>
+        <p></p>
     </div>
 </div><!-- ./row -->  

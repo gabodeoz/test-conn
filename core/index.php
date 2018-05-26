@@ -10,8 +10,7 @@
         echo $metod;
         handler($metod);
        
-function handler($metod = '') {
-    if($_POST){echo 'hello- world '.$metod;}
+function handler($metod = '') {  
     $host = new Hosts();
     switch ($metod) {
         case SET_HOST:          
