@@ -18,12 +18,12 @@ class Hosts extends ConectionBD {
             $this->$key=$value;
         }
         
-        $this->query ='INSERT INTO hosts(db_host, db_name, db_user, db_pass, db_port)'
-                .' VALUES ('.$this->db_host.''
-                            . ','.$this->db_name.''
-                            . ','.$this->db_user.''
-                            . ','.$this->db_pass.''
-                            . ','.$this->db_port.')';
+    echo     $this->query ="INSERT INTO hosts(db_host, db_name, db_user, db_pass, db_port)"
+                ." VALUES ('".$this->db_host."'"
+                            . ',\''.$this->db_name.'\''
+                            . ',\''.$this->db_user.'\''
+                            . ',\''.$this->db_pass.'\''
+                            . ',\''.$this->db_port.'\');';
         $this->execute_single_query();        
     }
     

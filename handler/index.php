@@ -8,7 +8,7 @@
         $metod = str_replace(ROOT,'', $str_url);
         $metod = str_replace(URL_WS,'', $metod);      
         $metod = str_replace('/','', $metod);
-      echo $metod;
+      
         handler($metod);
        
 function handler($metod = '') {  

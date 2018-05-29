@@ -9,8 +9,8 @@ abstract class ConectionBD{
     private static $server = 'localhost';
     //sagil23'@'localhost
     private static $sesion = 'user_monitor';
-    private static $pass = 'wszLmTJZdWjvd4wF';
-    private static $database = 'monitordb';
+    private static $pass = '61EOxsbHGCZukedg';
+    private static $database = 'test';
     protected $query;
     public $rows = array();
     private $conn;
