@@ -27,7 +27,7 @@ $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     protected function get_results_from_query() {
         $this->open_connection();
         
-        echo $this->query;
+        $this->query;
         $result = $this->conn->query($this->query);
        
         while ($this->rows[] = $result->fetch_assoc());

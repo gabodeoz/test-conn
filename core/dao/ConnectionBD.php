@@ -14,7 +14,7 @@ abstract class ConectionBD{
     protected $query;
     public $rows = array();
     private $conn;
-    public $mensaje = 'Hecho';
+    public $mensaje = 'ok';
 
     # los siguientes métodos pueden definirse con exactitud y no son abstractos
 	# Conectar a la base de datos
@@ -31,7 +31,7 @@ abstract class ConectionBD{
 	# Ejecutar un query simple del tipo INSERT, DELETE, UPDATE
 	protected function execute_single_query() {	    
 	        $this->open_connection();
-	        echo $this->conn->query($this->query);
+	        $this->conn->query($this->query);
 	        $this->close_connection();	    
 	}
 
@@ -39,7 +39,7 @@ abstract class ConectionBD{
 	protected function get_results_from_query() {
         $this->open_connection();
         
-        echo $this->query;
+        $this->query;
         $result = $this->conn->query($this->query);
        
         while ($this->rows[] = $result->fetch_assoc());

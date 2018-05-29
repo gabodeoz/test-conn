@@ -1,5 +1,5 @@
 <?php              
-        require_once '../handler/Html.php';
+        require_once '../core/bo/Html.php';
         require '../constants/constants.php';
         require '../constants/constants_views.php';
             

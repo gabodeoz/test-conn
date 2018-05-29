@@ -5,21 +5,21 @@
                 <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>                           
                 #{title}
             </h4>
-            
-            <form action="/test-conn/core/set-host/" method="POST">
+            <p></p>
+            <form action="#{action}" method="POST">
                 <div class="form-group">
                     <label for="db_host">Server</label>
-                    <input id="db_host" type="text" class="form-control"  placeholder="Server IP">
+                    <input id="db_host" name="db_host" type="text" class="form-control"  placeholder="Server IP">
                     <label for="db_name">Data base</label>
-                    <input id="db_name" type="text" class="form-control"  placeholder="Data base">
+                    <input id="db_name" name="db_name" type="text" class="form-control"  placeholder="Data base">
                     <label for="db_port">Port</label>
-                    <input id="db_port" type="text" class="form-control"  placeholder="Data base">
+                    <input id="db_port" name="db_port" type="text" class="form-control"  placeholder="Data base">
                 </div>                            
                 <div class="form-group">
                     <label for="db_user">User</label>
-                    <input id="db_user" type="text" class="form-control"  placeholder="Sesion">
+                    <input id="db_user" name="db_user" type="text" class="form-control"  placeholder="Sesion">
                     <label for="db_pass">Password</label>
-                    <input id="db_pass" type="password" class="form-control"  placeholder="Password">
+                    <input id="db_pass" name="db_pass" type="password" class="form-control"  placeholder="Password">
                 </div>                            
                 <div class="text-right">
                     <button type="submit" class="btn btn-default" >

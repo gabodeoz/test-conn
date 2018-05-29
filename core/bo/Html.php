@@ -49,7 +49,8 @@ class Html {
         $html = str_replace('#{header}',  $this->get_template(VIEW_HEADER), $html);
         switch ($html_file){
             case VIEW_MAIN:
-             $data ['title'] = 'Guardar server';   
+             $data ['title'] = 'Guardar server'; 
+             $data ['action'] = '../'.URL_WS.'/'.SET_HOST; 
              $html = str_replace('#{main}',  $this->get_template(VIEW_MAIN), $html);   
              $html = $this ->html_data($html,$data);
             break;    
