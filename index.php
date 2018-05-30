@@ -7,8 +7,7 @@
     <body>
         <?php
             require 'constants/constants.php';
-            header('location:/'.ROOT.'/home/');
-            
+            header('location:/'.ROOT.'/home/');            
         ?>
     </body>
 </html>
