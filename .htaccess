@@ -5,4 +5,6 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
 RewriteRule ^.*$ ./index.php
-#RewriteRule ^core/ test-conn/index.php
+
+RewriteRule ^home/ test-conn/home/
+RewriteRule ^core/ test-conn/home/
