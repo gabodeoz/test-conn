@@ -2,23 +2,57 @@
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>session_id</th>
-                <th>Position</th>              
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>session_id</th>
-                <th>Position</th>                
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
             </tr>
         </tfoot>
     </table>
-<script type = 'text/javascript'>    
-      var table = $('#example').DataTable( {
-            ajax: "..assets/array.txt"
+<script type = 'text/javascript'> 
+   $(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": {
+            "url": "..assets/array.txt",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "office" },
+            { "data": "extn" },
+            { "data": "start_date" },
+            { "data": "salary" }
+        ]
+    } );
+} );
+    /*
+    
+      var table = $('#example').DataTable( {       
+            
+            "ajax": {
+            "url": "..assets/array.txt",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "session_id" },
+            { "data": "login_time" }           
+        ]
         } );
  
         setInterval( function () {
             table.ajax.reload();
-        }, 30000 );
+        }, 30000 );*/
 </script>
