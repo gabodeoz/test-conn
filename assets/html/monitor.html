@@ -1,0 +1,24 @@
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>session_id</th>
+                <th>Position</th>              
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>session_id</th>
+                <th>Position</th>                
+            </tr>
+        </tfoot>
+    </table>
+<script type = 'text/javascript'>    
+      var table = $('#example').DataTable( {
+            ajax: "..assets/array.txt"
+        } );
+ 
+        setInterval( function () {
+            table.ajax.reload();
+        }, 30000 );
+</script>
