@@ -3,4 +3,5 @@
     const VIEW_MAIN = 'main';         
     const VIEW_TEMPLATE = 'template';
     const VIEW_HEADER = 'header';
+    const VIEW_MONITOR ='monitor';
 ?>
