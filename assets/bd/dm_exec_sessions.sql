@@ -1,0 +1,18 @@
+   SELECT    [session_id]
+            ,[login_time]
+            ,[host_name]
+            ,[program_name]
+            ,[host_process_id]
+            ,[client_interface_name]
+            ,[login_name]
+            ,[status]            
+            ,[cpu_time]
+            ,[memory_usage]
+            ,[last_request_start_time]
+            ,[last_request_end_time]
+            ,[text_size]
+            ,[lock_timeout]
+            ,[deadlock_priority]
+            ,[original_login_name] 
+    FROM sys.dm_exec_sessions WHERE status <>'sleeping';
+            
